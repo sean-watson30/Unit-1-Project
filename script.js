@@ -60,8 +60,33 @@ const displayOptions = (riddle) => {
   const $btnMakerW3 = $(`<button>${riddle.incorrect_answers[2]}</button>`)
   $btnMakerW3.addClass('wrongAnswer')
   $mainContent.append($btnMakerW3)
+
+  $btnMakerA.on('click', playerChoiceCorrect)
+  $btnMakerW1.on('click', playerChoiceWrong)
+  $btnMakerW2.on('click', playerChoiceWrong)
+  $btnMakerW3.on('click', playerChoiceWrong)
 }
 
 
 // write some game logic (if/else, etc) as needed to figure out if the player selected the correct button...render() function needed here?
 // might be difficult, will maybe need to look at randomizing the button positions? (stretch goal, not necessarily MVP)...possibly adding them to a randomIndex sorta thing of an array?
+
+// setting initial player selection at null
+// const player = {
+//   currentChoice: null
+// }
+// an array of the options for the player to choose?
+// const options = ['.correctAnswer', '.wrongAnswer']
+// console.log(options[0])
+
+
+// a function to compare player selection with answers
+const playerChoiceCorrect = () => {
+ alert("Your answer is correct! The sphynx spares your life...this time.")
+}
+const playerChoiceWrong = () => {
+  alert("You have answered incorrectly. The sphynx will now take your life!")
+  $mainContent.empty();
+}
+// see if this can be done with if/else logic, and see if we can get the content of the text of the buttons to use to compare
+// maybe instead of an alert box, append the statement to the DOM
