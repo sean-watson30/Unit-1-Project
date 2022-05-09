@@ -2,15 +2,6 @@
 
 // VARIABLES
 const URL = "https://opentdb.com/api.php?amount=10&category=20&difficulty=easy&type=multiple"
-
-// const apiData =  $.ajax(URL).then(function(data) {
-//     console.log(data.results[1])
-//   }, function(error) {
-//     console.log('something went wrong')
-//   })
-
-  // console.log(apiData.results)
-  // console.log($(data.results))
   
 // ELEMENT REFERENCES
 const $playBtn = $('#playBtn')
@@ -26,24 +17,32 @@ $playBtn.on('click', getRiddle)
 function getRiddle() {
   const randomIndex = Math.floor(Math.random() * 10)
   // console.log(randomIndex)
-  // get array index from API data (I tried to use .lenght method, but couldn't figure out how, so I went with hard-coding *10 since the API only has 10 index options)
-  
+  // get array index from API data (I tried to use .length method, but couldn't figure out how, so I went with hard-coding *10 since the API only has 10 index options)
   $.ajax(URL).then(function(data) {
-    console.log(data.results[randomIndex])
+    // console.log(data)
+    const riddle = data.results[randomIndex].question
+    // return riddle
+    displayRiddle(riddle)
   }, function(error) {
     console.log('something went wrong')
   })
-
-  
-
 } 
-
 
 // const riddle = data[randomIndex]
 // console.log(riddle)
 
-function displayRiddle() {
+function displayRiddle(riddle) {
 // connect the randomIndex riddle to the DOM in the <main> by appending to $mainContent
+  console.log(riddle)
+  $mainContent.empty();
+
+  const $riddleHeader = $('<h2>')
+  $riddleHeader.text('The Sphynx speaks out to you in a supernatural voice. "Answer, if you dare!"')
+  $mainContent.append($riddleHeader)
+
+  const $riddleText = $('<p>')
+  $mainContent.append($riddleText)
+
 }
 
 // do I need a getOptions function also?
