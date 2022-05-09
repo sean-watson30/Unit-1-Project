@@ -34,7 +34,7 @@ const displayRiddle = (riddle) => {
   $mainContent.empty();
 
   const $riddleHeader = $('<h2>')
-  $riddleHeader.text('The Sphynx speaks out to you in a supernatural voice: "Answer, if you dare!"')
+  $riddleHeader.text('The Sphinx speaks out to you in a supernatural voice: "Answer the following, if you dare!"')
   $mainContent.append($riddleHeader)
 
   const $riddleText = $('<p>')
@@ -82,11 +82,12 @@ const displayOptions = (riddle) => {
 
 // a function to compare player selection with answers
 const playerChoiceCorrect = () => {
- alert("Your answer is correct! The sphynx spares your life...this time.")
+ const win = $('<h3>Your answer is correct! The sphinx spares your life...this time.</h3>')
+ $mainContent.prepend(win)
 }
 const playerChoiceWrong = () => {
-  alert("You have answered incorrectly. The sphynx will now take your life!")
-  $mainContent.empty();
+  const lose = $('<h3>You have answered incorrectly. The sphinx will now take your life!</h3>')
+  $mainContent.prepend(lose)
+  $mainContent.fadeOut(4000);
 }
 // see if this can be done with if/else logic, and see if we can get the content of the text of the buttons to use to compare
-// maybe instead of an alert box, append the statement to the DOM
