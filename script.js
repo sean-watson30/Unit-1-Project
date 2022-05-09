@@ -20,7 +20,8 @@ function getRiddle() {
   // get array index from API data (I tried to use .length method, but couldn't figure out how, so I went with hard-coding *10 since the API only has 10 index options)
   $.ajax(URL).then(function(data) {
     // console.log(data)
-    const riddle = data.results[randomIndex].question
+    const riddle = data.results[randomIndex]
+    // was const riddle = data.results[randomIndex].question...but as I'm referencing later to get answers as well, I thinkk it won't work here, so calling .question below in $riddleText
     // return riddle
     displayRiddle(riddle)
     displayOptions(riddle)
@@ -39,16 +40,26 @@ const displayRiddle = (riddle) => {
   $mainContent.append($riddleHeader)
 
   const $riddleText = $('<p>')
-  $riddleText.text(riddle)
+  $riddleText.text(riddle.question)
   $mainContent.append($riddleText)
 
 }
-// do I need a getOptions function also?
+// do I need a getOptions function also? (maybe not, if I pass riddle into disaplyOptions below)
 // get the answer options form the API object and connect them to the answer buttons
   // maybe use DOM to create these buttons, so we can use .text to put the answer right in the buttons themselves (rather than hard-coding button A, B, etc)
   
 const displayOptions = (riddle) => {
-    console.log(riddle)
+  console.log(riddle)
+
+  const $btnMakerA = $(`<button>${riddle.correct_answer}</button>`)
+  $btnMakerA.addClass('correctAnswer')
+  $mainContent.append($btnMakerA)
+
+  const $btnMakerW = $(`<button>${riddle.incorrect_answers}</button>`)
+  $btnMakerW.addClass('wrongAnswer')
+  $mainContent.append($btnMakerW)
+
+
 }
 // write some game logic (if/else, etc) as needed to figure out if the player selected the correct button
-  // might be difficult, will maybe need to look at randomizing the button positions? (stretch goal, not necessarily MVP)
+// might be difficult, will maybe need to look at randomizing the button positions? (stretch goal, not necessarily MVP)...possibly adding them to a randomIndex sorta thing of an array?
