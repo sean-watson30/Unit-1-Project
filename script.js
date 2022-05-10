@@ -82,11 +82,11 @@ const displayOptions = (riddle) => {
 
 // a function to compare player selection with answers
 const playerChoiceCorrect = () => {
- const win = $('<h3>Your answer is correct! The sphinx spares your life...this time.</h3>')
+ const win = $('<h1>Your answer is correct! The sphinx spares your life...this time.</h1>')
  $mainContent.prepend(win)
 }
 const playerChoiceWrong = () => {
-  const lose = $('<h3>You have answered incorrectly. The sphinx will now take your life!</h3>')
+  const lose = $('<h1>You have answered incorrectly. The sphinx will now take your life!</h1>')
   $mainContent.prepend(lose)
   $mainContent.fadeOut(4000);
 }

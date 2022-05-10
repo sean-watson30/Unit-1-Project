@@ -1,14 +1,40 @@
 body {
   background-color: rgb(186, 215, 228);
+  font-family: 'Alegreya SC', serif;
+  color: white;
+  text-align: center;
+  /* background-image: <bg-image>#; */
 }
-
+#playBtn {
+  background-color: rgb(99, 71, 36);
+  font-family: 'Alegreya SC', serif;
+  color: white;
+}
+.correctAnswer {
+  background-color: rgb(99, 71, 36);
+  font-family: 'Alegreya SC', serif;
+  color: white;
+}
+.wrongAnswer{
+  background-color: rgb(99, 71, 36);
+  font-family: 'Alegreya SC', serif;
+  color: white;
+}
 /* add background image */
 
 /* add central sphynx image */
+header {
+  background-color: rgb(162, 116, 60);
+}
+
+main {
+  background-color: rgb(162, 116, 60);
+  padding: 15 px;
+  color: white;
+}
 
 /* add side <div> obelisk images */
 
-/* style <main> as a box with padding, etc, where DOm will poulate riddle when selected */
 
 /* style all buttons to match theme */
 
