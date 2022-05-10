@@ -35,7 +35,13 @@ header {
   border-radius: 4pt;
   padding: 2%;
   margin: 30px 250px 30px 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+/* .imgSphinx {
+
+} */
 
 main {
   background-color: rgb(162, 116, 60);
@@ -45,12 +51,18 @@ main {
   border-radius: 4pt;
   padding: 2%;
   margin: 30px 250px 30px 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.columnLeft {
+
+
+/* .columnLeft {
   display: flex;
 
-}
+} */
 
 
 /* style all buttons to match theme */

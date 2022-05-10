@@ -8,6 +8,8 @@ const $playBtn = $('#playBtn')
 // console.log($playBtn) playBtn connected
 const $mainContent = $('main')
 // connecting our <main> like in the walkthrough
+const $headerContent = $('header')
+const $body = $('body')
 
 // EVENT LISTENERS
 $playBtn.on('click', getRiddle)
@@ -86,8 +88,18 @@ const playerChoiceCorrect = () => {
  $mainContent.prepend(win)
 }
 const playerChoiceWrong = () => {
+  // $headerContent.empty();
+
+  const $sphinx = $('<img src="https://i.imgur.com/1x9R4sHl.jpg">')
+  $sphinx.addClass('imgSphinx');
+  $mainContent.prepend($sphinx);
+  
   const lose = $('<h1>You have answered incorrectly. The sphinx will now take your life!</h1>')
   $mainContent.prepend(lose)
-  $mainContent.fadeOut(4000);
+  $mainContent.fadeOut(5000);
+
+  // const $startOver = $('<button class="startOver">Play Again?</button>')
+  // $startOver.fadeIn(2000);
+  // $body.prepend($startOver);
 }
 // see if this can be done with if/else logic, and see if we can get the content of the text of the buttons to use to compare
