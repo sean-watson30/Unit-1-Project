@@ -6,6 +6,8 @@ body {
   background-repeat: no-repeat;
   background-size: 100%;
   background-color: rgb(186, 215, 228);
+  display: flex;
+  flex-direction: column;
 }
 
 #playBtn {
@@ -28,12 +30,21 @@ body {
 /* add central sphynx image */
 header {
   background-color: rgb(162, 116, 60);
+  border-color: rgb(99, 71, 36);
+  border-style: double;
+  border-radius: 4pt;
+  padding: 2%;
+  margin: 30px 250px 30px 250px;
 }
 
 main {
   background-color: rgb(162, 116, 60);
-  padding: 15 px;
   color: white;
+  border-color: rgb(99, 71, 36);
+  border-style: double;
+  border-radius: 4pt;
+  padding: 2%;
+  margin: 30px 250px 30px 250px;
 }
 
 .columnLeft {
