@@ -1,13 +1,17 @@
 body {
-  background-color: rgb(186, 215, 228);
   font-family: 'Alegreya SC', serif;
   color: white;
   text-align: center;
-  /* background-image: <bg-image>#; */
+  background-image: url("https://i.imgur.com/QK63lBw.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: rgb(186, 215, 228);
 }
+
 #playBtn {
   background-color: rgb(99, 71, 36);
   font-family: 'Alegreya SC', serif;
+  font-weight:  bolder;
   color: white;
 }
 .correctAnswer {
@@ -20,7 +24,6 @@ body {
   font-family: 'Alegreya SC', serif;
   color: white;
 }
-/* add background image */
 
 /* add central sphynx image */
 header {
@@ -33,9 +36,10 @@ main {
   color: white;
 }
 
-/* add side <div> obelisk images */
+.columnLeft {
+  display: flex;
+
+}
 
 
 /* style all buttons to match theme */
-
-/* select an Egyptian/ancient looking font */
