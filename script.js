@@ -10,7 +10,7 @@ const $mainContent = $('main')
 // connecting our <main> like in the walkthrough
 const $headerContent = $('header')
 const $body = $('body')
-// const $div = $('div')
+const $div = $('div')
 
 // EVENT LISTENERS
 $playBtn.on('click', getRiddle)
@@ -85,22 +85,26 @@ const displayOptions = (riddle) => {
 
 // a function to compare player selection with answers
 const playerChoiceCorrect = () => {
- const win = $('<h1>Your answer is correct! The sphinx spares your life...this time.</h1>')
- $mainContent.prepend(win)
+  $mainContent.empty();
+
+  const win = $('<h1>Your answer is correct! The sphinx spares your life...this time.</h1>')
+  $mainContent.prepend(win)
 }
 const playerChoiceWrong = () => {
-  // $headerContent.empty();
-
+  $div.empty();
+  document.body.style.backgroundImage='none'
+  // $mainContent.empty();
+  
   const $sphinx = $('<img src="https://i.imgur.com/1x9R4sHl.jpg">')
   $sphinx.addClass('imgSphinx');
-  $mainContent.prepend($sphinx);
+  $div.prepend($sphinx);
   
-  const lose = $('<h1>You have answered incorrectly. The sphinx will now take your life!</h1>')
-  $mainContent.prepend(lose)
-  $mainContent.fadeOut(5000);
+  const lose = $('<header><h1 class="lostText">You have answered incorrectly. The sphinx will now take your life!</h1></header>')
+  $div.prepend(lose)
+  $div.fadeOut(5000);
 
-  // const $startOver = $('<button class="startOver">Play Again?</button>')
-  // $startOver.fadeIn(2000);
-  // $body.prepend($startOver);
+  const $startOver = $('<button id="playBtn">Play Again?</button>')
+  $body.prepend($startOver);
+  // $body.fadeIn(5000);
 }
 // see if this can be done with if/else logic, and see if we can get the content of the text of the buttons to use to compare
