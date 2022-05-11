@@ -5,9 +5,7 @@ const URL = "https://opentdb.com/api.php?amount=10&category=20&difficulty=easy&t
   
 // ELEMENT REFERENCES
 const $playBtn = $('#playBtn')
-// console.log($playBtn) playBtn connected
 const $mainContent = $('main')
-// connecting our <main> like in the walkthrough
 const $headerContent = $('header')
 const $body = $('body')
 const $div = $('div')
@@ -16,13 +14,11 @@ const $div = $('div')
 $playBtn.on('click', getRiddle)
 
 // FUNCTIONS
-// getRiddle uses $.ajax to get info form APi and randomize the riddle question, and call displayRiddle() and displayOptions()
+// getRiddle uses $.ajax to get info from APi and randomize the riddle question, and call displayRiddle() and displayOptions()
 function getRiddle() {
   const randomIndex = Math.floor(Math.random() * 10)
-  // console.log(randomIndex)
   // get array index from API data (I tried to use .length method, but couldn't figure out how, so I went with hard-coding *10 since the API only has 10 index options)
   $.ajax(URL).then(function(data) {
-    // console.log(data)
     const riddle = data.results[randomIndex]
     // was const riddle = data.results[randomIndex].question...but as I'm referencing later to get answers as well, I thinkk it won't work here, so calling .question below in $riddleText
     displayRiddle(riddle)
@@ -33,7 +29,6 @@ function getRiddle() {
 } 
 // connect the randomIndex riddle to the DOM in the <main> by appending to $mainContent
 const displayRiddle = (riddle) => {
-  // console.log(riddle)
   $mainContent.empty();
 
   const $riddleHeader = $('<h2>')
@@ -70,18 +65,7 @@ const displayOptions = (riddle) => {
   $btnMakerW3.on('click', playerChoiceWrong)
 }
 
-
-// write some game logic (if/else, etc) as needed to figure out if the player selected the correct button...render() function needed here?
-// might be difficult, will maybe need to look at randomizing the button positions? (stretch goal, not necessarily MVP)...possibly adding them to a randomIndex sorta thing of an array?
-
-// setting initial player selection at null
-// const player = {
-//   currentChoice: null
-// }
-// an array of the options for the player to choose?
-// const options = ['.correctAnswer', '.wrongAnswer']
-// console.log(options[0])
-
+// look at randomizing the button positions? (stretch goal, not necessarily MVP)...possibly adding them to a randomIndex sorta thing of an array?
 
 // a function to compare player selection with answers
 const playerChoiceCorrect = () => {
@@ -93,7 +77,6 @@ const playerChoiceCorrect = () => {
 const playerChoiceWrong = () => {
   $div.empty();
   document.body.style.backgroundImage='none'
-  // $mainContent.empty();
   
   const $sphinx = $('<img src="https://i.imgur.com/1x9R4sHl.jpg">')
   $sphinx.addClass('imgSphinx');
@@ -105,6 +88,5 @@ const playerChoiceWrong = () => {
 
   const $startOver = $('<button id="playBtn">Play Again?</button>')
   $body.prepend($startOver);
-  // $body.fadeIn(5000);
 }
 // see if this can be done with if/else logic, and see if we can get the content of the text of the buttons to use to compare
