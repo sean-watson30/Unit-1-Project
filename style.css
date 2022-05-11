@@ -10,20 +10,6 @@ body {
   flex-direction: column;
 }
 
-/* body {
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  font-family: 'Alegreya SC', serif;
-  color: white;
-  text-align: center;
-  background-image: url("https://i.imgur.com/QK63lBw.jpg");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-color: rgb(186, 215, 228);
-
-} */
-
 #playBtn {
   background-color: rgb(99, 71, 36);
   font-family: 'Alegreya SC', serif;
@@ -41,10 +27,7 @@ body {
   color: white;
 }
 
-/* add central sphynx image */
 header {
-  /* display: grid;
-  grid-column: span 1; */
   background-color: rgb(162, 116, 60, 0.90);
   border-color: rgb(99, 71, 36);
   border-style: double;
@@ -53,16 +36,12 @@ header {
   margin: 30px 250px 30px 250px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  align-content: center;
 }
 /* .imgSphinx {
 
 } */
 
 main {
-  /* display: grid;
-  grid-column: span 1; */
   background-color: rgb(162, 116, 60, 0.90);
   color: white;
   border-color: rgb(99, 71, 36);
@@ -70,18 +49,4 @@ main {
   border-radius: 4pt;
   padding: 2%;
   margin: 30px 250px 30px 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
-
-
-
-/* .columnLeft {
-  display: flex;
-
-} */
-
-
-/* style all buttons to match theme */

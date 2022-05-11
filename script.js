@@ -10,6 +10,7 @@ const $mainContent = $('main')
 // connecting our <main> like in the walkthrough
 const $headerContent = $('header')
 const $body = $('body')
+// const $div = $('div')
 
 // EVENT LISTENERS
 $playBtn.on('click', getRiddle)
