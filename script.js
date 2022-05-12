@@ -2,6 +2,7 @@
 
 const URLeasy = "https://opentdb.com/api.php?amount=10&category=20&difficulty=easy&type=multiple"
 const URLmedium = "https://opentdb.com/api.php?amount=10&category=20&difficulty=medium&type=multiple"
+const URLhard = "https://opentdb.com/api.php?amount=10&category=20&difficulty=hard&type=multiple"
   
 // ELEMENT REFERENCES
 
@@ -23,19 +24,27 @@ function getRiddleEasy() {
   $.ajax(URLeasy).then(function(data) {
     const riddle = data.results[randomIndex]
     displayRiddle(riddle)
-    displayOptions(riddle)
+    displayFirstOptions(riddle)
   }, function(error) {
     console.log('something went wrong')
   })
 } 
-
 function getRiddleMedium() {
   const randomIndex = Math.floor(Math.random() * 10)
   $.ajax(URLmedium).then(function(data) {
     const riddle = data.results[randomIndex]
-    console.log(riddle)
     displayRiddle(riddle)
-    displayOptions(riddle)
+    displaySecondOptions(riddle)
+  }, function(error) {
+    console.log('something went wrong')
+  })
+}
+function getRiddleHard () {
+  const randomIndex = Math.floor(Math.random() * 10)
+  $.ajax(URLhard).then(function(data) {
+    const riddle = data.results[randomIndex]
+    displayRiddle(riddle)
+    displayLastOptions(riddle)
   }, function(error) {
     console.log('something went wrong')
   })
@@ -54,7 +63,7 @@ const displayRiddle = (riddle) => {
   
 }
 // connect the answers/options as buttons to the DOM in the <main>
-const displayOptions = (riddle) => {
+const displayFirstOptions = (riddle) => {
   const choices = []
   
   const $btnMakerA = $(`<button>${riddle.correct_answer}</button>`)
@@ -75,22 +84,89 @@ const displayOptions = (riddle) => {
   shuffleOptions(choices)
   $mainContent.append(choices)
   
-  $btnMakerA.on('click', playerChoiceCorrect)
+  $btnMakerA.on('click', playerFirstChoiceCorrect)
   $btnMakerW1.on('click', playerChoiceWrong)
   $btnMakerW2.on('click', playerChoiceWrong)
   $btnMakerW3.on('click', playerChoiceWrong)
 }
-
+const displaySecondOptions = (riddle) => {
+  const choices = []
+  
+  const $btnMakerA = $(`<button>${riddle.correct_answer}</button>`)
+  choices.push($btnMakerA)
+  
+  const $btnMakerW1 = $(`<button>${riddle.incorrect_answers[0]}</button>`)
+  choices.push($btnMakerW1)
+  
+  const $btnMakerW2 = $(`<button>${riddle.incorrect_answers[1]}</button>`)
+  choices.push($btnMakerW2)
+  
+  const $btnMakerW3 = $(`<button>${riddle.incorrect_answers[2]}</button>`)
+  choices.push($btnMakerW3)
+  
+  const shuffleOptions = (choices) => {
+    choices.sort(() => Math.random() - 0.5);
+  }
+  shuffleOptions(choices)
+  $mainContent.append(choices)
+  
+  $btnMakerA.on('click', playerSecondChoiceCorrect)
+  $btnMakerW1.on('click', playerChoiceWrong)
+  $btnMakerW2.on('click', playerChoiceWrong)
+  $btnMakerW3.on('click', playerChoiceWrong)
+}
+const displayLastOptions = (riddle) => {
+  const choices = []
+  
+  const $btnMakerA = $(`<button>${riddle.correct_answer}</button>`)
+  choices.push($btnMakerA)
+  
+  const $btnMakerW1 = $(`<button>${riddle.incorrect_answers[0]}</button>`)
+  choices.push($btnMakerW1)
+  
+  const $btnMakerW2 = $(`<button>${riddle.incorrect_answers[1]}</button>`)
+  choices.push($btnMakerW2)
+  
+  const $btnMakerW3 = $(`<button>${riddle.incorrect_answers[2]}</button>`)
+  choices.push($btnMakerW3)
+  
+  const shuffleOptions = (choices) => {
+    choices.sort(() => Math.random() - 0.5);
+  }
+  shuffleOptions(choices)
+  $mainContent.append(choices)
+  
+  $btnMakerA.on('click', playerLastChoiceCorrect)
+  $btnMakerW1.on('click', playerChoiceWrong)
+  $btnMakerW2.on('click', playerChoiceWrong)
+  $btnMakerW3.on('click', playerChoiceWrong)
+}
 // a function to compare player selection with answers
-const playerChoiceCorrect = () => {
+const playerFirstChoiceCorrect = () => {
   $mainContent.empty();
   
-  const win = $('<h1>Your answer is correct! The sphinx spares your life...this time.</h1>')
+  const win = $('<h1>"Ha! That one was easy!" The Sphinx says to you. "Do you dare try your luck again?!"</h1>')
   $mainContent.append(win)
   
   const $playAgain = $('<button id="playAgain">Play Again?</button>')
   $mainContent.append($playAgain);
   $playAgain.on('click', getRiddleMedium)
+}
+const playerSecondChoiceCorrect = () => {
+  $mainContent.empty();
+  
+  const win = $('<h1>Your answer is correct! The sphinx spares your life...this time. "Do you dare try your luck again?!" she asks.</h1>')
+  $mainContent.append(win)
+  
+  const $playLast = $('<button id="playLast">Play Again?</button>')
+  $mainContent.append($playLast);
+  $playLast.on('click', getRiddleHard)
+}
+const playerLastChoiceCorrect = () => {
+  $mainContent.empty();
+  
+  const win = $('<h1>Your answer is correct! The sphinx lets you leave with your life.</h1>')
+  $mainContent.append(win)
 }
 const playerChoiceWrong = () => {
   $div.empty();

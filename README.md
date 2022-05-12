@@ -25,7 +25,6 @@ This app is a simple game to test your knowledge of Greek and Roman mythology. T
 
 ## Future Enhancements
 
-* The ability to have multiple rounds of questions increasing in difficulty before winning
 * The ability to restart a new game without needing to refresh the page.
 
 ## Thank You's and Aknowledgements
