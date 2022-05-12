@@ -21,7 +21,7 @@ This app is a simple game to test your knowledge of Greek and Roman mythology. T
 
 ## Getting Started
 
-[Click Here](link) to see the deployed app!
+[Click Here](chimerical-gaufre-e1405c.netlify.app) to see the deployed app!
 
 ## Future Enhancements
 
