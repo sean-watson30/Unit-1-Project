@@ -12,6 +12,7 @@ const $mainContent = $('main')
 const $headerContent = $('header')
 const $body = $('body')
 const $div = $('div')
+const $retry = $('#retry')
 
 // EVENT LISTENERS
 
@@ -180,7 +181,8 @@ const playerChoiceWrong = () => {
   const lose = $('<h1 class="lostText">You have answered incorrectly. The sphinx will now take your life!!!!</h1>')
   $body.prepend(lose)
   
-  // const $startOver = $('<button id="playBtn">Play Again?</button>')
+  // const $startOver = $('<button id="retry">Start Over?</button>')
   // $body.prepend($startOver);
+  // $retry.on('click', window.location.reload())
   // to later add a start over button to refresh page
 }
