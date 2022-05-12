@@ -12,16 +12,8 @@ body {
   ;
 }
 
-button {
-  background-color: rgb(99, 71, 36);
-  font-family: 'Alegreya SC', serif;
-  color: white;
-  padding: 2%;
-  margin: 1%;
-}
-
 header {
-  background-color: rgb(162, 116, 60, 0.90);
+  background-color: rgb(162, 116, 60, 0.75);
   border-color: rgb(99, 71, 36);
   border-style: double;
   border-radius: 4pt;
@@ -29,12 +21,9 @@ header {
   grid-area: header;
   margin: 5% 5% 5% 5%;
 }
-/* .imgSphinx {
-
-} */
 
 main {
-  background-color: rgb(162, 116, 60, 0.90);
+  background-color: rgb(162, 116, 60, 0.75);
   color: white;
   border-color: rgb(99, 71, 36);
   border-style: double;
@@ -42,6 +31,15 @@ main {
   padding: 2%;
   grid-area: main;
   margin: 5% 5% 5% 5%;
+}
+
+button {
+  background-color: rgb(99, 71, 36);
+  background-image: url("https://i.imgur.com/nvtxOv6b.jpg");
+  font-family: 'Alegreya SC', serif;
+  color: white;
+  padding: 2%;
+  margin: 1%;
 }
 
 .lostText{
