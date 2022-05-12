@@ -43,21 +43,35 @@ const displayRiddle = (riddle) => {
 // connect the answers/options as buttons to the DOM in the <main>
 const displayOptions = (riddle) => {
   // console.log(riddle)
+  const choices = []
+  
   const $btnMakerA = $(`<button>${riddle.correct_answer}</button>`)
   $btnMakerA.addClass('correctAnswer')
-  $mainContent.append($btnMakerA)
-
+  // $mainContent.append($btnMakerA)
+  choices.push($btnMakerA)
+  
   const $btnMakerW1 = $(`<button>${riddle.incorrect_answers[0]}</button>`)
   $btnMakerW1.addClass('wrongAnswer')
-  $mainContent.append($btnMakerW1)
-
+  // $mainContent.append($btnMakerW1)
+  choices.push($btnMakerW1)
+  
   const $btnMakerW2 = $(`<button>${riddle.incorrect_answers[1]}</button>`)
   $btnMakerW2.addClass('wrongAnswer')
-  $mainContent.append($btnMakerW2)
-
+  // $mainContent.append($btnMakerW2)
+  choices.push($btnMakerW2)
+  
   const $btnMakerW3 = $(`<button>${riddle.incorrect_answers[2]}</button>`)
   $btnMakerW3.addClass('wrongAnswer')
-  $mainContent.append($btnMakerW3)
+  // $mainContent.append($btnMakerW3)
+  choices.push($btnMakerW3)
+  // console.log(choices)
+  
+  const shuffleOptions = (choices) => {
+    choices.sort(() => Math.random() - 0.5);
+  }
+  shuffleOptions(choices)
+  // console.log(choices)
+  $mainContent.append(choices)
 
   $btnMakerA.on('click', playerChoiceCorrect)
   $btnMakerW1.on('click', playerChoiceWrong)
@@ -66,6 +80,8 @@ const displayOptions = (riddle) => {
 }
 
 // look at randomizing the button positions? (stretch goal, not necessarily MVP)...possibly adding them to a randomIndex sorta thing of an array?
+
+
 
 // a function to compare player selection with answers
 const playerChoiceCorrect = () => {
@@ -78,7 +94,7 @@ const playerChoiceWrong = () => {
   $div.empty();
   document.body.style.backgroundImage='none'
   
-  const $sphinx = $('<img src="https://i.imgur.com/1x9R4sHl.jpg">')
+  const $sphinx = $('<img src="https://i.imgur.com/bvYiesw.png">')
   $sphinx.addClass('imgSphinx');
   $div.prepend($sphinx);
   
