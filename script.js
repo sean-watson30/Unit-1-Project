@@ -89,7 +89,7 @@ const playerChoiceWrong = () => {
   $div.prepend($sphinx);
   $div.fadeOut(8000);
   
-  const lose = $('<header><h1 class="lostText">You have answered incorrectly. The sphinx will now take your life!</h1></header>')
+  const lose = $('<h1 class="lostText">You have answered incorrectly. The sphinx will now take your life!!!!</h1>')
   $body.prepend(lose)
 
   // const $startOver = $('<button id="playBtn">Play Again?</button>')

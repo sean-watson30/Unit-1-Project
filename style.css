@@ -6,8 +6,6 @@ body {
   background-image: url("https://i.imgur.com/QK63lBw.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
-  /* display: flex;
-  flex-direction: column; */
   grid-template-areas: 
   ". header ."
   ". main ."
@@ -39,9 +37,6 @@ header {
   padding: 2%;
   grid-area: header;
   margin: 5% 5% 5% 5%;
-  /* margin: 30px 250px 30px 250px; */
-  display: flex;
-  flex-flow: column, wrap;
 }
 /* .imgSphinx {
 
@@ -56,19 +51,18 @@ main {
   padding: 2%;
   grid-area: main;
   margin: 5% 5% 5% 5%;
-  /* margin: 30px 250px 30px 250px; */
 }
 
 .lostText{
-  color: rgb(130, 6, 6);
+  color: rgb(193, 9, 9);
   text-emphasis: bold;
 }
 
 @media only screen and (min-width: 760px) {
   header {
-    margin: 5% 25% 5% 25%;
+    margin: 5% 27% 5% 27%;
   }
   main {
-    margin: 5% 25% 5% 25%;
+    margin: 5% 27% 5% 27%;
   }
 }
