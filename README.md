@@ -21,12 +21,11 @@ This app is a simple game to test your knowledge of Greek and Roman mythology. T
 
 ## Getting Started
 
-[Click Here](chimerical-gaufre-e1405c.netlify.app) to see the deployed app!
+[Click Here](https://chimerical-gaufre-e1405c.netlify.app/) to see the deployed app!
 
 ## Future Enhancements
 
 * The ability to have multiple rounds of questions increasing in difficulty before winning
-* The ability to place the answer buttons in a randomly chosen order
 * The ability to restart a new game without needing to refresh the page.
 
 ## Thank You's and Aknowledgements
