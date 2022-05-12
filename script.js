@@ -46,7 +46,7 @@ const displayOptions = (riddle) => {
   const choices = []
   
   const $btnMakerA = $(`<button>${riddle.correct_answer}</button>`)
-  $btnMakerA.addClass('correctAnswer')
+  // $btnMakerA.addClass('correctAnswer')
   choices.push($btnMakerA)
   
   const $btnMakerW1 = $(`<button>${riddle.incorrect_answers[0]}</button>`)

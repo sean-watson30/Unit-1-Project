@@ -12,21 +12,12 @@ body {
   ;
 }
 
-#playBtn {
-  background-color: rgb(99, 71, 36);
-  font-family: 'Alegreya SC', serif;
-  font-weight:  bolder;
-  color: white;
-}
-.correctAnswer {
+button {
   background-color: rgb(99, 71, 36);
   font-family: 'Alegreya SC', serif;
   color: white;
-}
-.wrongAnswer{
-  background-color: rgb(99, 71, 36);
-  font-family: 'Alegreya SC', serif;
-  color: white;
+  padding: 2%;
+  margin: 1%;
 }
 
 header {
